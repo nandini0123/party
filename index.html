@@ -1,36 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>🎂 Happy Birthday Mounika Miss 🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
       background: radial-gradient(circle at top, #1b1e4b, #0a0a23);
+      overflow: hidden;
       font-family: 'Quicksand', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      height: 100vh;
       color: white;
-      overflow-x: hidden;
-      position: relative;
     }
 
     .stars {
       position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.imgur.com/X5sQYvF.png') repeat;
       animation: moveStars 60s linear infinite;
       z-index: -1;
-      pointer-events: none;
-      opacity: 0.4;
-      filter: brightness(1.3);
+      opacity: 0.2;
     }
 
     @keyframes moveStars {
@@ -40,14 +37,12 @@
 
     .card-wrapper {
       perspective: 1200px;
-      width: 95%;
-      max-width: 450px;
-      margin: 40px 0 20px;
+      margin-bottom: 20px;
     }
 
     .card {
-      width: 100%;
-      height: 300px; /* Fixed height for both sides */
+      width: 420px;
+      height: 270px;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 1s ease;
@@ -60,76 +55,69 @@
     .front, .inside {
       position: absolute;
       width: 100%;
-      height: 100%; /* Match card height */
+      height: 100%;
       backface-visibility: hidden;
       border-radius: 20px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-      box-sizing: border-box;
-      overflow: hidden;
+    }
+
+    .front {
+      background: linear-gradient(135deg, #ff7eb9, #ff758c);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .front {
-      background-color: #0096c7;
+      font-size: 26px;
       color: white;
     }
 
     .front h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 32px;
       margin: 0;
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
     }
 
     .inside {
-      background: white;
+      background: #fff;
       color: #333;
       transform: rotateY(180deg);
-      border: 3px solid #056af0;
-      overflow-y: auto; /* Scroll if text overflows */
+      padding: 25px;
+      box-sizing: border-box;
+      font-size: 18px;
+      line-height: 1.6;
+      border: 3px solid #ff758c;
     }
 
     .inside h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 26px;
       color: #ff3e5b;
-      margin-top: 0;
+      font-family: 'Pacifico', cursive;
+      font-size: 30px;
+      margin-bottom: 15px;
     }
 
     .footer {
       margin-top: 20px;
-      color: palevioletred;
+      color: #777;
       font-style: italic;
-      font-size: 15px;
-    }
-
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
-      gap: 10px;
+      font-size: 14px;
     }
 
     .btn {
       padding: 12px 25px;
-      background-color: #219ebc;
+      background: linear-gradient(to right, #ff758c, #ff7eb9);
       border: none;
       border-radius: 30px;
       color: white;
       font-size: 16px;
+      margin: 10px;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(113, 184, 243, 0.5);
+      box-shadow: 0 5px 15px rgba(255, 117, 140, 0.5);
       transition: transform 0.2s, box-shadow 0.3s;
     }
 
     .btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(113, 184, 243, 0.7);
+      box-shadow: 0 8px 20px rgba(255, 117, 140, 0.7);
     }
 
     .photo-gallery {
@@ -139,39 +127,20 @@
     }
 
     .photo-gallery img {
-      width: 100%;
-      max-width: 400px;
+      max-width: 90%;
+      width: 350px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease;
+    }
+
+    .photo-gallery img:hover {
+      transform: scale(1.03);
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
-    }
-
-    @media (max-width: 480px) {
-      .card {
-        height: 320px;
-      }
-
-      .front h2 {
-        font-size: 24px;
-      }
-
-      .inside h1 {
-        font-size: 20px;
-      }
-
-      .front, .inside {
-        font-size: 14px;
-        padding: 16px;
-      }
-
-      .btn {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
     }
   </style>
 </head>
@@ -179,35 +148,30 @@
 
   <div class="stars"></div>
 
-  <!-- 🎂 Card -->
   <div class="card-wrapper">
     <div class="card" id="card">
       <div class="front">
         <h2>🎉 Happy Birthday 🎉</h2>
-        <p style="font-size: 18px;">Mounika Miss</p>
+        <p style="font-size: 20px;">Mounika Miss</p>
       </div>
       <div class="inside">
         <h1>Dear Mounika Miss 🎂</h1>
         <p>
-          Wishing you a day filled with laughter,<br>
-          love, and all your favorite things!<br><br>
-          Your guidance, care, and wisdom mean the world to your students.<br>
-          You’re a true inspiration, and we’re so lucky to have you!
+          Wishing you a magical birthday<br>
+          filled with happiness, warmth, and sweet surprises!<br><br>
+          Your kindness and wisdom shine bright,<br>
+          and we’re forever grateful to be your students.
         </p>
-        <div class="footer">– With love, your student Nandini 💖</div>
+        <div class="footer">– With heartfelt wishes, your student 💖</div>
       </div>
     </div>
   </div>
 
-  <!-- 📌 Buttons -->
-  <div class="btn-container">
-    <button class="btn" onclick="flipCard()">Open Card</button>
-    <button class="btn" onclick="showPhoto()">Show Photo</button>
-  </div>
+  <button class="btn" onclick="flipCard()">Open Card</button>
+  <button class="btn" onclick="showPhoto()">Show Photo</button>
 
-  <!-- 📷 Photo -->
   <div class="photo-gallery" id="gallery">
-    <img src="mounika.jpg" alt="Mounika Miss Birthday" />
+    <img src="mounika.jpg" alt="Mounika Miss Birthday">
   </div>
 
   <script>
@@ -223,9 +187,9 @@
       setTimeout(() => gallery.scrollIntoView({ behavior: 'smooth' }), 100);
     }
   </script>
-
 </body>
 </html>
+
 
 
 
