@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎂 Happy Birthday Mounika Miss 🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
   <style>
@@ -15,6 +15,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       color: white;
       overflow-x: hidden;
       position: relative;
@@ -40,15 +41,16 @@
 
     .card-wrapper {
       perspective: 1200px;
+      margin-bottom: 20px;
       width: 100%;
       display: flex;
       justify-content: center;
-      margin: 40px 0 20px;
     }
 
     .card {
       width: 95%;
       max-width: 420px;
+      aspect-ratio: 4 / 3;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 1s ease;
@@ -61,13 +63,10 @@
     .front, .inside {
       position: absolute;
       width: 100%;
-      height: auto;
+      height: 100%;
       backface-visibility: hidden;
       border-radius: 20px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-      box-sizing: border-box;
-      overflow-wrap: break-word;
-      word-break: break-word;
     }
 
     .front {
@@ -76,32 +75,34 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      font-size: 26px;
       color: white;
+      text-align: center;
       padding: 20px;
     }
 
     .front h2 {
+      margin: 0;
       font-family: 'Pacifico', cursive;
       font-size: 32px;
-      margin: 0;
     }
 
     .inside {
-      background-color: #fff;
+      background: #fff;
       color: #333;
       transform: rotateY(180deg);
       padding: 20px;
+      box-sizing: border-box;
       font-size: 16px;
       line-height: 1.6;
       border: 3px solid #056af0;
     }
 
     .inside h1 {
+      color: #ff3e5b;
       font-family: 'Pacifico', cursive;
       font-size: 26px;
-      color: #ff3e5b;
-      margin-top: 0;
+      margin-bottom: 10px;
     }
 
     .footer {
@@ -109,13 +110,6 @@
       color: palevioletred;
       font-style: italic;
       font-size: 15px;
-    }
-
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 10px;
     }
 
     .btn {
@@ -159,34 +153,13 @@
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
-
-    @media (max-width: 480px) {
-      .front h2 {
-        font-size: 24px;
-      }
-
-      .inside h1 {
-        font-size: 20px;
-      }
-
-      .btn {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-
-      .front, .inside {
-        font-size: 14px;
-        padding: 16px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <div class="stars"></div>
 
-  <!-- 🎂 Card -->
-  <div class="card-wrapper">
+  <div class="card-wrapper" style="margin-bottom: 40px;">
     <div class="card" id="card">
       <div class="front">
         <h2>🎉 Happy Birthday 🎉</h2>
@@ -197,21 +170,18 @@
         <p>
           Wishing you a day filled with laughter,<br>
           love, and all your favorite things!<br><br>
-          Your guidance, care, and wisdom mean the world to your students.<br>
-          You’re a true inspiration, and we’re so lucky to have you!
+          Your guidance, care, and wisdom mean<br>
+          the world to your students. You’re a true<br>
+          inspiration, and we’re so lucky to have you!
         </p>
-        <div class="footer">– With love, your student Nandini 💖</div>
+        <div class="footer">– With love, your student Nandini💖</div>
       </div>
     </div>
   </div>
 
-  <!-- 👇 Buttons BELOW the card -->
-  <div class="btn-container">
-    <button class="btn" onclick="flipCard()">Open Card</button>
-    <button class="btn" onclick="showPhoto()">Show Photo</button>
-  </div>
+  <button class="btn" onclick="flipCard()">Open Card</button>
+  <button class="btn" onclick="showPhoto()">Show Photo</button>
 
-  <!-- 📸 Photo (optional) -->
   <div class="photo-gallery" id="gallery">
     <img src="mounika.jpg" alt="Mounika Miss Birthday">
   </div>
@@ -229,8 +199,8 @@
       setTimeout(() => gallery.scrollIntoView({ behavior: 'smooth' }), 100);
     }
   </script>
-
 </body>
 </html>
+
 
 
