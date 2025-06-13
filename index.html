@@ -188,18 +188,28 @@
   </div>
 
   <script>
-    function flipCard() {
-      const card = document.getElementById("card");
-      card.classList.toggle("flipped");
-      setTimeout(() => card.scrollIntoView({ behavior: 'smooth' }), 300);
+  function flipCard() {
+    const card = document.getElementById("card");
+    card.classList.toggle("flipped");
+    setTimeout(() => card.scrollIntoView({ behavior: 'smooth' }), 300);
+  }
+
+  function showPhoto() {
+    const card = document.getElementById("card");
+    const gallery = document.getElementById("gallery");
+
+    // Only show photo if card has been flipped
+    if (!card.classList.contains("flipped")) {
+      alert("Please open the card first! 🎁");
+      return;
     }
 
-    function showPhoto() {
-      const gallery = document.getElementById('gallery');
-      gallery.style.display = 'block';
-      setTimeout(() => gallery.scrollIntoView({ behavior: 'smooth' }), 100);
-    }
-  </script>
+    // Show photo if card is already flipped
+    gallery.style.display = 'block';
+    setTimeout(() => gallery.scrollIntoView({ behavior: 'smooth' }), 100);
+  }
+</script>
+
 </body>
 </html>
 
