@@ -42,15 +42,12 @@
       perspective: 1200px;
       width: 95%;
       max-width: 450px;
-      margin: 30px 0;
+      margin: 40px 0 20px;
     }
 
     .card {
-      
       width: 100%;
-      height: 300px;
-      max-width: 420px;
-      aspect-ratio: 4 / 3;
+      height: 300px; /* Fixed height for both sides */
       position: relative;
       transform-style: preserve-3d;
       transition: transform 1s ease;
@@ -61,13 +58,31 @@
     }
 
     .front, .inside {
-      background-color: #0096c7;
-      color: white;
-      padding: 20px;
+      position: absolute;
+      width: 100%;
+      height: 100%; /* Match card height */
+      backface-visibility: hidden;
       border-radius: 20px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-      backface-visibility: hidden;
       box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .front {
+      background-color: #0096c7;
+      color: white;
+    }
+
+    .front h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 32px;
+      margin: 0;
     }
 
     .inside {
@@ -75,12 +90,7 @@
       color: #333;
       transform: rotateY(180deg);
       border: 3px solid #056af0;
-    }
-
-    .front h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 32px;
-      margin: 0;
+      overflow-y: auto; /* Scroll if text overflows */
     }
 
     .inside h1 {
@@ -141,6 +151,10 @@
     }
 
     @media (max-width: 480px) {
+      .card {
+        height: 320px;
+      }
+
       .front h2 {
         font-size: 24px;
       }
@@ -165,7 +179,7 @@
 
   <div class="stars"></div>
 
-  <!-- 🃏 Card -->
+  <!-- 🎂 Card -->
   <div class="card-wrapper">
     <div class="card" id="card">
       <div class="front">
@@ -185,13 +199,13 @@
     </div>
   </div>
 
-  <!-- ✅ Buttons below card -->
+  <!-- 📌 Buttons -->
   <div class="btn-container">
     <button class="btn" onclick="flipCard()">Open Card</button>
     <button class="btn" onclick="showPhoto()">Show Photo</button>
   </div>
 
-  <!-- 🎁 Optional photo -->
+  <!-- 📷 Photo -->
   <div class="photo-gallery" id="gallery">
     <img src="mounika.jpg" alt="Mounika Miss Birthday" />
   </div>
