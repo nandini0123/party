@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🎂 Happy Birthday Mounika Miss 🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
   <style>
@@ -15,7 +15,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       color: white;
       overflow-x: hidden;
       position: relative;
@@ -41,16 +40,13 @@
 
     .card-wrapper {
       perspective: 1200px;
-      margin-bottom: 20px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
+      width: 95%;
+      max-width: 450px;
+      margin: 30px 0;
     }
 
     .card {
-      width: 95%;
-      max-width: 420px;
-      aspect-ratio: 4 / 3;
+      width: 100%;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 1s ease;
@@ -61,48 +57,33 @@
     }
 
     .front, .inside {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
+      background-color: #0096c7;
+      color: white;
+      padding: 20px;
       border-radius: 20px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    }
-
-    .front {
-      background-color: #0096c7;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .front h2 {
-      margin: 0;
-      font-family: 'Pacifico', cursive;
-      font-size: 32px;
+      backface-visibility: hidden;
+      box-sizing: border-box;
     }
 
     .inside {
-      background: #fff;
+      background: white;
       color: #333;
       transform: rotateY(180deg);
-      padding: 20px;
-      box-sizing: border-box;
-      font-size: 16px;
-      line-height: 1.6;
       border: 3px solid #056af0;
     }
 
+    .front h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 32px;
+      margin: 0;
+    }
+
     .inside h1 {
-      color: #ff3e5b;
       font-family: 'Pacifico', cursive;
       font-size: 26px;
-      margin-bottom: 10px;
+      color: #ff3e5b;
+      margin-top: 0;
     }
 
     .footer {
@@ -112,6 +93,14 @@
       font-size: 15px;
     }
 
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
     .btn {
       padding: 12px 25px;
       background-color: #219ebc;
@@ -119,7 +108,6 @@
       border-radius: 30px;
       color: white;
       font-size: 16px;
-      margin: 10px;
       cursor: pointer;
       box-shadow: 0 5px 15px rgba(113, 184, 243, 0.5);
       transition: transform 0.2s, box-shadow 0.3s;
@@ -139,19 +127,33 @@
     .photo-gallery img {
       width: 100%;
       max-width: 400px;
-      height: auto;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: transform 0.4s ease;
-    }
-
-    .photo-gallery img:hover {
-      transform: scale(1.03);
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+      .front h2 {
+        font-size: 24px;
+      }
+
+      .inside h1 {
+        font-size: 20px;
+      }
+
+      .front, .inside {
+        font-size: 14px;
+        padding: 16px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
@@ -159,7 +161,8 @@
 
   <div class="stars"></div>
 
-  <div class="card-wrapper" style="margin-bottom: 40px;">
+  <!-- 🃏 Card -->
+  <div class="card-wrapper">
     <div class="card" id="card">
       <div class="front">
         <h2>🎉 Happy Birthday 🎉</h2>
@@ -170,20 +173,23 @@
         <p>
           Wishing you a day filled with laughter,<br>
           love, and all your favorite things!<br><br>
-          Your guidance, care, and wisdom mean<br>
-          the world to your students. You’re a true<br>
-          inspiration, and we’re so lucky to have you!
+          Your guidance, care, and wisdom mean the world to your students.<br>
+          You’re a true inspiration, and we’re so lucky to have you!
         </p>
-        <div class="footer">– With love, your student Nandini💖</div>
+        <div class="footer">– With love, your student Nandini 💖</div>
       </div>
     </div>
   </div>
 
-  <button class="btn" onclick="flipCard()">Open Card</button>
-  <button class="btn" onclick="showPhoto()">Show Photo</button>
+  <!-- ✅ Buttons below card -->
+  <div class="btn-container">
+    <button class="btn" onclick="flipCard()">Open Card</button>
+    <button class="btn" onclick="showPhoto()">Show Photo</button>
+  </div>
 
+  <!-- 🎁 Optional photo -->
   <div class="photo-gallery" id="gallery">
-    <img src="mounika.jpg" alt="Mounika Miss Birthday">
+    <img src="mounika.jpg" alt="Mounika Miss Birthday" />
   </div>
 
   <script>
@@ -199,6 +205,7 @@
       setTimeout(() => gallery.scrollIntoView({ behavior: 'smooth' }), 100);
     }
   </script>
+
 </body>
 </html>
 
