@@ -1,33 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎂 Happy Birthday Mounika Miss 🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
+      min-height: 100vh;
       background: radial-gradient(circle at top, #1b1e4b, #0a0a23);
-      overflow: hidden;
       font-family: 'Quicksand', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       color: white;
+      overflow-x: hidden;
+      position: relative;
     }
 
     .stars {
       position: fixed;
-      width: 100%;
-      height: 100%;
-      background: url('https://i.imgur.com/X5sQYvF.png') repeat;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
       animation: moveStars 60s linear infinite;
       z-index: -1;
-      opacity: 0.2;
+      pointer-events: none;
+      opacity: 0.4;
+      filter: brightness(1.3);
     }
 
     @keyframes moveStars {
@@ -38,11 +42,16 @@
     .card-wrapper {
       perspective: 1200px;
       margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
 
     .card {
-      width: 420px;
-      height: 270px;
+      width: 100%;
+      height: 300px;
+      max-width: 420px;
+      aspect-ratio: 4 / 3;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 1s ease;
@@ -62,62 +71,64 @@
     }
 
     .front {
-      background: linear-gradient(135deg, #ff7eb9, #ff758c);
+      background-color: #0096c7;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       font-size: 26px;
       color: white;
+      text-align: center;
+      padding: 20px;
     }
 
     .front h2 {
       margin: 0;
       font-family: 'Pacifico', cursive;
-      font-size: 36px;
+      font-size: 32px;
     }
 
     .inside {
       background: #fff;
       color: #333;
       transform: rotateY(180deg);
-      padding: 25px;
+      padding: 20px;
       box-sizing: border-box;
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.6;
-      border: 3px solid #ff758c;
+      border: 3px solid #056af0;
     }
 
     .inside h1 {
       color: #ff3e5b;
       font-family: 'Pacifico', cursive;
-      font-size: 30px;
-      margin-bottom: 15px;
+      font-size: 26px;
+      margin-bottom: 10px;
     }
 
     .footer {
       margin-top: 20px;
-      color: #777;
+      color: palevioletred;
       font-style: italic;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .btn {
       padding: 12px 25px;
-      background: linear-gradient(to right, #ff758c, #ff7eb9);
+      background-color: #219ebc;
       border: none;
       border-radius: 30px;
       color: white;
       font-size: 16px;
       margin: 10px;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(255, 117, 140, 0.5);
+      box-shadow: 0 5px 15px rgba(113, 184, 243, 0.5);
       transition: transform 0.2s, box-shadow 0.3s;
     }
 
     .btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(255, 117, 140, 0.7);
+      box-shadow: 0 8px 20px rgba(113, 184, 243, 0.7);
     }
 
     .photo-gallery {
@@ -127,8 +138,9 @@
     }
 
     .photo-gallery img {
-      max-width: 90%;
-      width: 350px;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       transition: transform 0.4s ease;
@@ -148,21 +160,22 @@
 
   <div class="stars"></div>
 
-  <div class="card-wrapper">
+  <div class="card-wrapper" style="margin-bottom: 40px;">
     <div class="card" id="card">
       <div class="front">
         <h2>🎉 Happy Birthday 🎉</h2>
-        <p style="font-size: 20px;">Mounika Miss</p>
+        <p style="font-size: 18px;">Mounika Miss</p>
       </div>
       <div class="inside">
         <h1>Dear Mounika Miss 🎂</h1>
         <p>
-          Wishing you a magical birthday<br>
-          filled with happiness, warmth, and sweet surprises!<br><br>
-          Your kindness and wisdom shine bright,<br>
-          and we’re forever grateful to be your students.
+          Wishing you a day filled with laughter,<br>
+          love, and all your favorite things!<br><br>
+          Your guidance, care, and wisdom mean<br>
+          the world to your students. You’re a true<br>
+          inspiration, and we’re so lucky to have you!
         </p>
-        <div class="footer">– With heartfelt wishes, your student 💖</div>
+        <div class="footer">– With love, your student Nandini💖</div>
       </div>
     </div>
   </div>
@@ -189,6 +202,7 @@
   </script>
 </body>
 </html>
+
 
 
 
